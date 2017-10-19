@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.wzy.dao.RegionDAO">
+   
+  <resultMap id="RegionMap" type="com.wzy.model.RegionModel" >  
+    <id column="ID" property="ID" jdbcType="INTEGER" />  
+    <result column="Name" property="Name" jdbcType="VARCHAR" />  
+    <result column="District" property="District" jdbcType="VARCHAR" />  
+    <result column="Population" property="Population" jdbcType="INTEGER" />  
+  </resultMap>  
+  <sql id="Region_Column_List" >  
+    ID, Name, District, Population  
+  </sql>  
+  
+  <select id="findById" resultMap="RegionMap" parameterType="java.lang.Integer" >  
+    select * from city where id = #{ID}  
+  </select>  
+
+
+  
+
+</mapper>
